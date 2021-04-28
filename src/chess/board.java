@@ -44,6 +44,4 @@ public class board {
 		pieces.put("g2", new piece('p', 'w'));
 		pieces.put("h2", new piece('p', 'w'));
 	}
-	
-	
 }
