@@ -16,37 +16,4 @@ public class piece {
 		
 	}
 	
-	public void move (String pos1, String pos2) {
-		boolean legal = false;
-		if (type == 'p') {
-			
-		}
-		if (type == 'n') {
-			
-		}
-		if (type == 'b') {
-			
-		}
-		if (type == 'r') {
-			
-		}
-		if (type == 'q') {
-			
-		}
-		if (type == 'k') {
-			
-		}
-	}
-	
-	/*public boolean check() {
-		
-	}
-	
-	public boolean checkMate() {
-		
-	}
-	
-	public boolean staleMate() {
-		
-	}*/
 }
