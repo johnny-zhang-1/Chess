@@ -1,6 +1,6 @@
 # Chess
 chess.\
-we live in a society.\
+we live in a society.
 
 # Team Name: Some Asian Kid
 Team members: Johnny Zhang, Nathan Gu, Albert Yu\
@@ -14,4 +14,4 @@ UML:\
 Team Responsibility:\
 Known Bugs / Workarounds:\
 Key learnings:\
-Credit List:\
+Credit List:
