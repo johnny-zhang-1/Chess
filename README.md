@@ -1,5 +1,5 @@
 # Chess
-chess uwu.\  
+chess uwu.
 we live in a society.
 
 ## Team Name: Some Asian Kid
