@@ -2,7 +2,7 @@
 chess.
 we live in a society.
 
-Team Name: Some Asian Kid
+# Team Name: Some Asian Kid
 Team members: Johnny Zhang, Nathan Gu, Albert Yu
 Revision Date: 4/30/21
 Program Purpose: The purpose of the program is to allow the user to play chess against another player. The users move through inputs (eg. h1 to h5)
