@@ -12,6 +12,6 @@ Instructions: Move your pieces accordingly based on how your opponent moves in c
 Class List: BoardGui, JPanel, JFrame, GameController, Board, Piece, PieceImg, Pawn, Knight, Bishop, Rook, Queen, King\
 UML: (will be attached with the readme)\
 Team Responsibilities: Try and stay as ahead of guidelines as much as possible and do your section(don't procrastinate please). Ask for help and help others :) \
-Known Bugs / Workarounds: Classes currently only work separately and we need to link up the classes to make the project function properly\
+Known Bugs / Workarounds: Some classes currently only work separately and we need to link up the classes to make the project function properly. BoardGui currently having problems with the ratio between the JPanel and the actual chessboard.\
 Key learnings: graphics, arrays, GUI, constructors, conditions, strings, relationship between classes\
 Credit List:https://codereview.stackexchange.com/questions/71790/design-a-chess-game-using-object-oriented-principles 
