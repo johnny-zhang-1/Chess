@@ -14,4 +14,4 @@ UML: (will be attached with the readme)\
 Team Responsibilities: Try and stay as ahead of guidelines as much as possible and do your section(don't procrastinate please). Ask for help and help others :) \
 Known Bugs / Workarounds: Classes currently only work separately and we need to link up the classes to make the project function properly\
 Key learnings: graphics, arrays, GUI, constructors, conditions, strings, relationship between classes\
-Credit List:uwu
+Credit List:https://codereview.stackexchange.com/questions/71790/design-a-chess-game-using-object-oriented-principles 
