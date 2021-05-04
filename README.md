@@ -4,7 +4,7 @@ we live in a society.
 
 ### Team Name: Some Asian Kid
 Team members: Johnny Zhang, Nathan Gu, Albert Yu\
-Revision Date: 4/29/21\
+Revision Date: 5/4/21\
 Program Purpose: The purpose of the program is to display a two player chess game that takes input from a text line (eg. h1 to h5)The program provides entertainment and training for both chess players.\
 Target User Profile: Anyone who likes to have fun playing chess\
 Feature List: scuffed chess (chess on crack even)\
