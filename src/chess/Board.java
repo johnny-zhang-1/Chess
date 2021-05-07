@@ -1,10 +1,14 @@
 package chess;
 
 import java.util.*;
+import javafx.util.Pair;
 
 public class Board {
 	
 	Map<String, piece> pieces = new HashMap<String, piece>();
+
+	public String movedFrom;
+	public String movedTo;
 
 	public void setup() {
 		pieces.clear();
@@ -51,7 +55,9 @@ public class Board {
 		tempc = pieces.get(pos1.color);
 		pieces.put(pos2, new piece(tempt, tempc));
 		pieces.remove(pos1);
-
+		movedFrom = pos1;
+		movedTo = pos2;
+		public piece movedPiece = new piece(tempt, tempc);
 	}
 	
 	/*public boolean check() {
