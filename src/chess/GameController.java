@@ -1,6 +1,6 @@
 package chess;
 
-public class main {
+public class GameController {
 	
 	public static void main(String[] args) {
 		board b = new board();
