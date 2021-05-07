@@ -2,7 +2,7 @@ package chess;
 
 import java.util.*;
 
-public class board {
+public class Board {
 	
 	Map<String, piece> pieces = new HashMap<String, piece>();
 	
