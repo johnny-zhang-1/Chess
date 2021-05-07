@@ -5,7 +5,7 @@ import java.util.*;
 public class Board {
 	
 	Map<String, piece> pieces = new HashMap<String, piece>();
-	
+
 	public void setup() {
 		pieces.clear();
 		pieces.put("a8", new piece('r', 'b'));
@@ -45,25 +45,13 @@ public class Board {
 		pieces.put("h2", new piece('p', 'w'));
 	}
 	public void move (String pos1, String pos2) {
-		boolean legal = false;
-		if (type == 'p') {
-			
-		}
-		if (type == 'n') {
-			
-		}
-		if (type == 'b') {
-			
-		}
-		if (type == 'r') {
-			
-		}
-		if (type == 'q') {
-			
-		}
-		if (type == 'k') {
-			
-		}
+		pieces.remove(pos2);
+		int tempt, tempc;
+		tempt = pieces.get(pos1.type);
+		tempc = pieces.get(pos1.color);
+		pieces.put(pos2, new piece(tempt, tempc));
+		pieces.remove(pos1);
+
 	}
 	
 	/*public boolean check() {
