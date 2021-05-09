@@ -1,7 +1,6 @@
 package chess;
 
 import java.util.*;
-import javafx.util.Pair;
 
 public class Board {
 	
