@@ -4,59 +4,63 @@ import java.util.*;
 
 public class Board {
 	
-	Map<String, piece> pieces = new HashMap<String, piece>();
+	piece[][] board = new piece[9][9];
 
-	public String movedFrom;
-	public String movedTo;
+	public int movedFromX;
+	public int movedFromY;
+	public int movedToX;
+	public int movedToY;
 
 	public void setup() {
-		pieces.clear();
-		pieces.put("a8", new piece('r', 'b'));
-		pieces.put("b8", new piece('n', 'b'));
-		pieces.put("c8", new piece('b', 'b'));
-		pieces.put("d8", new piece('q', 'b'));
-		pieces.put("e8", new piece('k', 'b'));
-		pieces.put("f8", new piece('b', 'b'));
-		pieces.put("g8", new piece('n', 'b'));
-		pieces.put("h8", new piece('r', 'b'));
+		pieces[1][1] = new piece('r', 'w');
+		pieces[1][2] = new piece('n', 'w');
+		pieces[1][3] = new piece('b', 'w');
+		pieces[1][4] = new piece('q', 'w');
+		pieces[1][5] = new piece('k', 'w');
+		pieces[1][6] = new piece('b', 'w');
+		pieces[1][7] = new piece('n', 'w');
+		pieces[1][8] = new piece('r', 'w');
 		
-		pieces.put("a7", new piece('p', 'b'));
-		pieces.put("b7", new piece('p', 'b'));
-		pieces.put("c7", new piece('p', 'b'));
-		pieces.put("d7", new piece('p', 'b'));
-		pieces.put("e7", new piece('p', 'b'));
-		pieces.put("f7", new piece('p', 'b'));
-		pieces.put("g7", new piece('p', 'b'));
-		pieces.put("h7", new piece('p', 'b'));
+		pieces[2][1] = new piece('p', 'w');
+		pieces[2][2] = new piece('p', 'w');
+		pieces[2][3] = new piece('p', 'w');
+		pieces[2][4] = new piece('p', 'w');
+		pieces[2][5] = new piece('p', 'w');
+		pieces[2][6] = new piece('p', 'w');
+		pieces[2][7] = new piece('p', 'w');
+		pieces[2][8] = new piece('p', 'w');
 		
-		pieces.put("a1", new piece('r', 'w'));
-		pieces.put("b1", new piece('n', 'w'));
-		pieces.put("c1", new piece('b', 'w'));
-		pieces.put("d1", new piece('q', 'w'));
-		pieces.put("e1", new piece('k', 'w'));
-		pieces.put("f1", new piece('b', 'w'));
-		pieces.put("g1", new piece('n', 'w'));
-		pieces.put("h1", new piece('r', 'w'));
+		pieces[7][1] = new piece('p', 'b');
+		pieces[7][2] = new piece('p', 'b');
+		pieces[7][3] = new piece('p', 'b');
+		pieces[7][4] = new piece('p', 'b');
+		pieces[7][5] = new piece('p', 'b');
+		pieces[7][6] = new piece('p', 'b');
+		pieces[7][7] = new piece('p', 'b');
+		pieces[7][8] = new piece('p', 'b');
 		
-		pieces.put("a2", new piece('p', 'w'));
-		pieces.put("b2", new piece('p', 'w'));
-		pieces.put("c2", new piece('p', 'w'));
-		pieces.put("d2", new piece('p', 'w'));
-		pieces.put("e2", new piece('p', 'w'));
-		pieces.put("f2", new piece('p', 'w'));
-		pieces.put("g2", new piece('p', 'w'));
-		pieces.put("h2", new piece('p', 'w'));
+		pieces[8][1] = new piece('r', 'b');
+		pieces[8][2] = new piece('n', 'b');
+		pieces[8][3] = new piece('b', 'b');
+		pieces[8][4] = new piece('q', 'b');
+		pieces[8][5] = new piece('k', 'b');
+		pieces[8][6] = new piece('b', 'b');
+		pieces[8][7] = new piece('n', 'b');
+		pieces[8][8] = new piece('r', 'b');
 	}
 	public void move (String pos1, String pos2) {
-		pieces.remove(pos2);
-		int tempt, tempc;
-		tempt = pieces.get(pos1.type);
-		tempc = pieces.get(pos1.color);
-		pieces.put(pos2, new piece(tempt, tempc));
-		pieces.remove(pos1);
-		movedFrom = pos1;
-		movedTo = pos2;
-		public piece movedPiece = new piece(tempt, tempc);
+		int x1 = (int)(pos1.charAt(0));
+		int y1 = pos1.charAt(1);
+		int x2 = (int)(pos2.charAt(0));
+		int y2 = pos1.charAt(1);
+		if (isLegal(pos1, pos2) == true) {
+			movedFromX = x1;
+			movedFromY = y1;
+			movedToX = x2;
+			movedToY = y2;
+			pieces[x2][y2] = pieces[x1][y1];
+			pieces[x1][y1] = new piece('e', 'e');
+		}
 	}
 	
 	/*public boolean check() {
