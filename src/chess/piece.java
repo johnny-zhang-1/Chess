@@ -8,11 +8,7 @@ public class Piece {
 	
 	public Piece (char t, char c) {
 		type = t;
-		if (c == 'w') {
-			color = 'w';
-		} else {
-			color = 'b';
-		}
+		color = c;
 		
 	}
 	
