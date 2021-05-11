@@ -60,6 +60,7 @@ public class Board {
 			movedToY = y2;
 			pieces[x2][y2] = pieces[x1][y1];
 			pieces[x1][y1] = new piece('e', 'e');
+			updateMatrix(pieces);
 		}
 	}
 	
