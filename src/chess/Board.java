@@ -64,6 +64,10 @@ public class Board {
 		}
 	}
 	
+	public boolean isLegal(String pos1, String pos2) {
+		
+	}
+
 	/*public boolean check() {
 		
 	}
