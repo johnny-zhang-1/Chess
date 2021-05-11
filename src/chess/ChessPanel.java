@@ -4,14 +4,8 @@ import java.util.*;
 
 import javax.swing.*;
 public class ChessPanel extends JPanel {
-//array
-//gInput[] array = new gInput[32]; 
-
-HashMap<String, piece> hmap = new HashMap<String, piece>();
-//outdated
 
 piece[][]mat = new piece[9][9];
-
 
 //images
 private Image blackpawnIMG = (new ImageIcon("blackpawn.png")).getImage();
@@ -43,122 +37,27 @@ private PieceIMG whiteking = new PieceIMG(whitekingIMG);
 private PieceIMG boardpiece = new PieceIMG(boardIMG);
 	public ChessPanel() {
 		//JPanel
-		
 		super();
 		Image boardImg = (new ImageIcon("")).getImage();
 		BoardIMG board = new BoardIMG(boardImg);
 		this.setVisible(true);
-//		for (int i = 0; i < 32; i++) {
-//			array[i] = new gInput("e", "e", true);
-//		}
 
-		
-	}
-//	public void move(String pieceType, String location) {
-//		int new_x;
-//		int new_y;
-//		char temp = location.charAt(0);
-//		new_x = ((int)(temp)-'a')*100;
-//		new_y = (int)(location.charAt(1)-'1')*100;
-//		
-//		if (pieceType == "bk1") {
-//			//black knight 1 (meaning left side) 2 means right side
-//		}
-//		//after changed x, y coords of a piece, clear screen and repaint (???)
-//	}
-//  archived	
-//	public void updateArray(gInput[] array) {
-//		this.array = array;
-//	}
-	
-	public void updateHMap(HashMap<String, piece> h) {
-		//outdated see updateMatrix
-		hmap = h;
-	}
 	public void updateMatrix(piece[][] m) {
 		mat = m;
 	}
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
-
-//		System.out.println(Integer.toString(blackpawnIMG.getHeight(null)) + "x" + Integer.toString(blackpawnIMG.getWidth(null)));
-//
-//		System.out.println(Integer.toString(boardIMG.getHeight(null)) + "x" + Integer.toString(boardIMG.getWidth(null)));
-		//redraw everything with new coords (get input as )
 		boardpiece.draw(g, 0 , 0);
-//		for (Map.Entry me : hmap.entrySet()) {
-//			piece bob = (piece) me.getValue();
-//			String piecename = (bob.color) + "" + (bob.type);
-//			System.out.println(piecename);
-//			String chessLoc = (String) me.getKey();
-//			int new_x = (int)(chessLoc.charAt(0)-'a')*100;
-//			int new_y = (7-(int)(chessLoc.charAt(1)-'1'))*100;
-//			System.out.println(chessLoc.charAt(1)-'1');
-//			if (piecename.equals("bp")) {
-//				System.out.println("painting blackpawn");
-//				blackpawn.draw(g, new_x, new_y);
-//
-//			}
-//			else if (piecename.equals("bq")) {			
-//				blackqueen.draw(g, new_x, new_y);
-//
-//			}
-//			else if (piecename.equals("bb")) {
-//				blackbishop.draw(g, new_x, new_y);
-//			}
-//			else if (piecename.equals("br")) {
-//				blackrook.draw(g, new_x, new_y);
-//			
-//			}
-//			else if (piecename.equals("bn")) {
-//				blackknight.draw(g, new_x, new_y);
-//			
-//			}
-//			else if (piecename.equals("bk")) {
-//				blackking.draw(g, new_x, new_y);
-//			
-//			}
-//			else if (piecename.equals("wp")) {
-//				whitepawn.draw(g, new_x, new_y);
-//			
-//			}
-//			else if (piecename.equals("wq")) {
-//				whitequeen.draw(g, new_x, new_y);
-//			
-//			}
-//			else if (piecename.equals("wb")) {
-//				whitebishop.draw(g, new_x, new_y);
-//			
-//			}
-//			else if (piecename.equals("wr")) {
-//				whiterook.draw(g, new_x, new_y);
-//		
-//			}
-//			else if (piecename.equals("wn")) {
-//				whiteknight.draw(g, new_x, new_y);
-//
-//			}
-//			else if (piecename.equals("wk")) {
-//				whiteking.draw(g, new_x, new_y);
-//
-//					
-//			}
-//		}
 		for (int i = 1; i < 9; i++) {
 			for (int j = 1; j < 9; j++) {
 				piece bob = mat[i][j];
 				
 				if (bob == null) continue;
 				System.out.println(bob.color + "" + bob.type);
-				String piecename = (bob.color) + "" + (bob.type);
-//				System.out.println(piecename);
-				//String chessLoc = (String) me.getKey();
-				
-				
+				String piecename = (bob.color) + "" + (bob.type);		
 				int new_y = (i-1)*100;
 				int new_x = (j-1)*100;
-				//System.out.println(chessLoc.charAt(1)-'1');
 				if (piecename.equals("bp")) {
 					blackpawn.draw(g, new_x, new_y);
 		
