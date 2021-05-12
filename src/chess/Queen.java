@@ -1,36 +1,20 @@
-import java.util.LinkedList;
-import java.util.List;
+
 
 public class Queen extends Piece {
 
-    public Queen(int color, Square initSq, String img_file) {
-        super(color, initSq, img_file);
+	public Queen(char ct, char cc) {
+		super(ct,cc);
+	}
+	
+    public Queen(String color, String img_file) {
+        super(color, img_file);
     }
 
     @Override
-    public List<Square> getValid(Board b) {
-        LinkedList<Square> valid = new LinkedList<Square>();
+    public boolean getValid(Board b) {
+
         
-        Square[][] board = b.getSquareArray();
-        
-        int x = this.getPosition().getXNum();
-        int y = this.getPosition().getYNum();
-        
-        int[] occups = getLinearOccupations(board, x, y);
-        
-        for (int i = occups[0]; i <= occups[1]; i++) {
-            if (i != y) valid.add(board[i][x]);
-        }
-        
-        for (int i = occups[2]; i <= occups[3]; i++) {
-            if (i != x) valid.add(board[y][i]);
-        }
-        
-        List<Square> bMoves = getDiagonalOccupations(board, x, y);
-        
-        valid.addAll(bMoves);
-        
-        return valid;
+        return true;
     }
     
 }

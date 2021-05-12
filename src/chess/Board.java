@@ -1,73 +1,171 @@
-package chess;
+//package chess;
 
+import java.awt.BorderLayout;
+import java.awt.Dimension;
+import java.awt.Font;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
 import java.util.*;
 
-public class Board {
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JPanel;
+import javax.swing.JTextField;
+
+
+public class Board{
 	
-	piece[][] board = new piece[9][9];
+	//Map<String, Piece> whitePieces = new HashMap<String, Piece>();
+	HashMap<String, Piece> pieces = new HashMap<String, Piece>();
 
-	public int movedFromX;
-	public int movedFromY;
-	public int movedToX;
-	public int movedToY;
+	public String movedFrom;
+	public String movedTo;
+	
+	String oldLoc;
+	boolean refreshReq = false;
+	
+	JLabel fromLabel = new JLabel("You Select:");
+	JLabel toLabel = new JLabel("Next Move");
+	
+	//JTextField fromField = new JTextField("Current");
+	JTextField toField = new JTextField("Next");
+	ChessPanel panel;
 
-	public void setup() {
-		pieces[1][1] = new piece('r', 'w');
-		pieces[1][2] = new piece('n', 'w');
-		pieces[1][3] = new piece('b', 'w');
-		pieces[1][4] = new piece('q', 'w');
-		pieces[1][5] = new piece('k', 'w');
-		pieces[1][6] = new piece('b', 'w');
-		pieces[1][7] = new piece('n', 'w');
-		pieces[1][8] = new piece('r', 'w');
+	private void setup() {
 		
-		pieces[2][1] = new piece('p', 'w');
-		pieces[2][2] = new piece('p', 'w');
-		pieces[2][3] = new piece('p', 'w');
-		pieces[2][4] = new piece('p', 'w');
-		pieces[2][5] = new piece('p', 'w');
-		pieces[2][6] = new piece('p', 'w');
-		pieces[2][7] = new piece('p', 'w');
-		pieces[2][8] = new piece('p', 'w');
+		pieces.clear();
+		pieces.put("a8", new Rook('r', 'w'));
+		pieces.put("b8", new Knight('n', 'w'));
+		pieces.put("c8", new Bishop('b', 'w'));
+		pieces.put("d8", new Queen('q', 'w'));
+		pieces.put("e8", new King('k', 'w'));
+		pieces.put("f8", new Bishop('b', 'w'));
+		pieces.put("g8", new Knight('n', 'w'));
+		pieces.put("h8", new Rook('r', 'w'));
 		
-		pieces[7][1] = new piece('p', 'b');
-		pieces[7][2] = new piece('p', 'b');
-		pieces[7][3] = new piece('p', 'b');
-		pieces[7][4] = new piece('p', 'b');
-		pieces[7][5] = new piece('p', 'b');
-		pieces[7][6] = new piece('p', 'b');
-		pieces[7][7] = new piece('p', 'b');
-		pieces[7][8] = new piece('p', 'b');
+		pieces.put("a7", new Pawn('p', 'w'));
+		pieces.put("b7", new Pawn('p', 'w'));
+		pieces.put("c7", new Pawn('p', 'w'));
+		pieces.put("d7", new Pawn('p', 'w'));
+		pieces.put("e7", new Pawn('p', 'w'));
+		pieces.put("f7", new Pawn('p', 'w'));
+		pieces.put("g7", new Pawn('p', 'w'));
+		pieces.put("h7", new Pawn('p', 'w'));
 		
-		pieces[8][1] = new piece('r', 'b');
-		pieces[8][2] = new piece('n', 'b');
-		pieces[8][3] = new piece('b', 'b');
-		pieces[8][4] = new piece('q', 'b');
-		pieces[8][5] = new piece('k', 'b');
-		pieces[8][6] = new piece('b', 'b');
-		pieces[8][7] = new piece('n', 'b');
-		pieces[8][8] = new piece('r', 'b');
-	}
-	public void move (String pos1, String pos2) {
-		int x1 = (int)(pos1.charAt(0));
-		int y1 = pos1.charAt(1);
-		int x2 = (int)(pos2.charAt(0));
-		int y2 = pos1.charAt(1);
-		if (isLegal(pos1, pos2) == true) {
-			movedFromX = x1;
-			movedFromY = y1;
-			movedToX = x2;
-			movedToY = y2;
-			pieces[x2][y2] = pieces[x1][y1];
-			pieces[x1][y1] = new piece('e', 'e');
-			updateMatrix(pieces);
-		}
+		pieces.put("a1", new Rook('r', 'b'));
+		pieces.put("b1", new Knight('n', 'b'));
+		pieces.put("c1", new Bishop('b', 'b'));
+		pieces.put("d1", new Queen('q', 'b'));
+		pieces.put("e1", new King('k', 'b'));
+		pieces.put("f1", new Bishop('b', 'b'));
+		pieces.put("g1", new Knight('n', 'b'));
+		pieces.put("h1", new Rook('r', 'b'));
+		
+		pieces.put("a2", new Pawn('p', 'b'));
+		pieces.put("b2", new Pawn('p', 'b'));
+		pieces.put("c2", new Pawn('p', 'b'));
+		pieces.put("d2", new Pawn('p', 'b'));
+		pieces.put("e2", new Pawn('p', 'b'));
+		pieces.put("f2", new Pawn('p', 'b'));
+		pieces.put("g2", new Pawn('p', 'b'));
+		pieces.put("h2", new Pawn('p', 'b'));
 	}
 	
-	public boolean isLegal(String pos1, String pos2) {
+	private void createBoard() {
+		JFrame chessBoard = new JFrame("Chess Board");
+		chessBoard.setBounds(0, 0, 800, 850);
 		
+		chessBoard.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		chessBoard.setLayout(new BorderLayout());
+		
+		JPanel northPanel = new JPanel(new BorderLayout());
+	//	JPanel southPanel = new JPanel(new FlowLayout());
+		
+		//fromField.setMinimumSize(new Dimension(100,30));
+		toField.setMinimumSize(new Dimension(100,30));
+		toField.addActionListener(new ActionListener() {
+			
+			
+			 public void actionPerformed(ActionEvent event) {
+				 if(toField.getText() != null){
+					 
+				     String[] strs = toField.getText().split(" ");
+				     String newLoc = strs[strs.length-1];
+				     System.out.println("New Location : " + newLoc);
+				     
+				     Piece p = pieces.get(oldLoc);
+				     pieces.remove(oldLoc);
+				     pieces.put(newLoc, p);
+				     if(refreshReq) {
+				    	 	panel.repaint();
+				    	 	refreshReq = false;
+				     }
+				 }
+			}
+		});
+		
+		northPanel.add(fromLabel, BorderLayout.WEST);
+	//	northPanel.add(fromField);
+		
+		northPanel.add(toLabel,BorderLayout.EAST);
+		northPanel.add(toField,BorderLayout.EAST);
+		
+		panel = new ChessPanel(pieces, this);
+		
+		panel.setBounds(0, 0, 800, 850);
+		chessBoard.add(panel, BorderLayout.CENTER);
+		chessBoard.add(northPanel, BorderLayout.NORTH);
+	//	chessBoard.add(southPanel, BorderLayout.SOUTH);
+		chessBoard.setVisible(true);
+		chessBoard.repaint();
 	}
+	
+	public void setFromTextField(String color, String type, String loc) {
+		
+		String value = "";
+		
+		if(color.equalsIgnoreCase("b"))
+			value += "Black ";
+		else
+			value += "White";
+		if(type.equalsIgnoreCase("b"))
+			value += " Bishop";
+		else if(type.equalsIgnoreCase("n"))
+			value += " Knight";
+		else if(type.equalsIgnoreCase("k"))
+			value += " King";
+		else if(type.equalsIgnoreCase("q"))
+			value += " Queen";
+		else if(type.equalsIgnoreCase("r"))
+			value += " Rook";
+		else if(type.equalsIgnoreCase("p"))
+			value += " Pawn";
 
+		fromLabel.setText("Current : " + value + " " + loc);
+		fromLabel.setFont(new Font("Courier", Font.BOLD,12));
+		toField.setText("Next step " + value + "      ");
+		oldLoc = loc;
+		refreshReq = true;
+	}
+	
+	
+	/*
+	public void move (Piece pos1, Piece pos2) {
+		
+		Pieces.remove(pos2);
+		int tempt, tempc;
+		tempt = Pieces.get(pos1.type);
+		tempc = Pieces.get(pos1.color);
+		Pieces.put(pos2, new Piece(tempt, tempc));
+		Pieces.remove(pos1);
+		movedFrom = pos1;
+		movedTo = pos2;
+		
+		
+	}*/
+	
+
+	
 	/*public boolean check() {
 		
 	}
@@ -79,4 +177,10 @@ public class Board {
 	public boolean staleMate() {
 		
 	}*/
+	
+	public static final void main(String[] args) throws Exception{
+		Board board = new Board();
+		board.setup();
+		board.createBoard();
+	}
 }
