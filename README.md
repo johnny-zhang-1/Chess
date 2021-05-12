@@ -17,7 +17,7 @@ Feature List: scuffed chess(will add checks, checkmates, and pins if we have ext
 \
 Instructions: Move your pieces accordingly based on how your opponent moves in chess. Enter your moves through the text field(h1 to h5) and have fun :)\
 \
-Class List: Board, Piece, main, ChessPanel, GameController, GraphicsExampleMain, PieceImg, Square, Pawn, Rook, Knight, Bishop, King, Queen\
+Class List: Board, Piece, ChessPanel, MyPanel, PieceImg, Pawn, Rook, Knight, Bishop, King, Queen\
 \
 UML: (will be attached with the readme)\
 \
