@@ -1,4 +1,4 @@
-//package chess;
+package chess;
 
 import java.awt.BorderLayout;
 import java.awt.Dimension;
@@ -34,41 +34,41 @@ public class Board{
 	private void setup() {
 		
 		pieces.clear();
-		pieces.put("a8", new Rook('r', 'w'));
-		pieces.put("b8", new Knight('n', 'w'));
-		pieces.put("c8", new Bishop('b', 'w'));
-		pieces.put("d8", new Queen('q', 'w'));
-		pieces.put("e8", new King('k', 'w'));
-		pieces.put("f8", new Bishop('b', 'w'));
-		pieces.put("g8", new Knight('n', 'w'));
-		pieces.put("h8", new Rook('r', 'w'));
+		pieces.put("a8", new Rook('r', 'b'));
+		pieces.put("b8", new Knight('n', 'b'));
+		pieces.put("c8", new Bishop('b', 'b'));
+		pieces.put("d8", new Queen('q', 'b'));
+		pieces.put("e8", new King('k', 'b'));
+		pieces.put("f8", new Bishop('b', 'b'));
+		pieces.put("g8", new Knight('n', 'b'));
+		pieces.put("h8", new Rook('r', 'b'));
 		
-		pieces.put("a7", new Pawn('p', 'w'));
-		pieces.put("b7", new Pawn('p', 'w'));
-		pieces.put("c7", new Pawn('p', 'w'));
-		pieces.put("d7", new Pawn('p', 'w'));
-		pieces.put("e7", new Pawn('p', 'w'));
-		pieces.put("f7", new Pawn('p', 'w'));
-		pieces.put("g7", new Pawn('p', 'w'));
-		pieces.put("h7", new Pawn('p', 'w'));
+		pieces.put("a7", new Pawn('p', 'b'));
+		pieces.put("b7", new Pawn('p', 'b'));
+		pieces.put("c7", new Pawn('p', 'b'));
+		pieces.put("d7", new Pawn('p', 'b'));
+		pieces.put("e7", new Pawn('p', 'b'));
+		pieces.put("f7", new Pawn('p', 'b'));
+		pieces.put("g7", new Pawn('p', 'b'));
+		pieces.put("h7", new Pawn('p', 'b'));
 		
-		pieces.put("a1", new Rook('r', 'b'));
-		pieces.put("b1", new Knight('n', 'b'));
-		pieces.put("c1", new Bishop('b', 'b'));
-		pieces.put("d1", new Queen('q', 'b'));
-		pieces.put("e1", new King('k', 'b'));
-		pieces.put("f1", new Bishop('b', 'b'));
-		pieces.put("g1", new Knight('n', 'b'));
-		pieces.put("h1", new Rook('r', 'b'));
+		pieces.put("a1", new Rook('r', 'w'));
+		pieces.put("b1", new Knight('n', 'w'));
+		pieces.put("c1", new Bishop('b', 'w'));
+		pieces.put("d1", new Queen('q', 'w'));
+		pieces.put("e1", new King('k', 'w'));
+		pieces.put("f1", new Bishop('b', 'w'));
+		pieces.put("g1", new Knight('n', 'w'));
+		pieces.put("h1", new Rook('r', 'w'));
 		
-		pieces.put("a2", new Pawn('p', 'b'));
-		pieces.put("b2", new Pawn('p', 'b'));
-		pieces.put("c2", new Pawn('p', 'b'));
-		pieces.put("d2", new Pawn('p', 'b'));
-		pieces.put("e2", new Pawn('p', 'b'));
-		pieces.put("f2", new Pawn('p', 'b'));
-		pieces.put("g2", new Pawn('p', 'b'));
-		pieces.put("h2", new Pawn('p', 'b'));
+		pieces.put("a2", new Pawn('p', 'w'));
+		pieces.put("b2", new Pawn('p', 'w'));
+		pieces.put("c2", new Pawn('p', 'w'));
+		pieces.put("d2", new Pawn('p', 'w'));
+		pieces.put("e2", new Pawn('p', 'w'));
+		pieces.put("f2", new Pawn('p', 'w'));
+		pieces.put("g2", new Pawn('p', 'w'));
+		pieces.put("h2", new Pawn('p', 'w'));
 	}
 	
 	private void createBoard() {
@@ -178,7 +178,7 @@ public class Board{
 		
 	}*/
 	
-	public static final void main(String[] args) throws Exception{
+	public static void main(String[] args) throws Exception{
 		Board board = new Board();
 		board.setup();
 		board.createBoard();
