@@ -19,7 +19,7 @@ Users will be able to input moves on a text line. First, the white player will s
 
 
 ### Target User Profile: 
-Our target user profile contains a range of people from avid chess players to people who wish to practice playing with another 
+Our target user profile contains a range of people from avid chess players to people who wish to practice playing with another opponent. We want to expand our target user profile as we further improve the program's usefulness and quality by hooking in people who never play or show any interest in chess.
 
 
 
@@ -34,7 +34,7 @@ Download the java files and initialize the package. Also, add the .pngs and .jpg
 
 
 ### Class List: 
-Board, Piece, ChessPanel, MyPanel, PieceImg, Pawn, Rook, Knight, Bishop, King, Queen, MapBoard
+Board, Piece, ChessPanel, MyPanel, PieceImg, Pawn, Rook, Knight, Bishop, King, Queen, MatBoard
 
 
 
@@ -44,7 +44,7 @@ Board, Piece, ChessPanel, MyPanel, PieceImg, Pawn, Rook, Knight, Bishop, King, Q
 
 
 ### Team Responsibilities:
-Try and stay ahead of guidelines as much as possible and make sure to complete your class(don't procrastinate please). Ask for help and help others. Make sure to share most recent version of the code on github as well so we can update the UML and readme :). Johnny will do the code's "skeleton," Albert will do graphics, and Nathan will do UML, readme and anything else that needs doing. (In the end, Nathan created a "skeleton" of all the classes but the graphics related, while Johnny writes the methods for the individual pieces(king, knight, pawn, etc..). Albert's role remained the same).
+Try and stay ahead of guidelines as much as possible and make sure to complete your class(don't procrastinate please). Ask for help and help others. Make sure to share most recent version of the code on GitHub as well so we can update the UML and readme :). Johnny will do the code's "skeleton," Albert will do graphics, and Nathan will do UML, readme and anything else that needs doing. (In the end, Nathan created a "skeleton" of all the classes but the graphics related, while Johnny writes the methods for the individual pieces(king, knight, pawn, etc..). Albert's role remained the same).
 
 
 
@@ -54,7 +54,7 @@ Classes compile with each other now. If you select a piece but don't enter a loc
 
 
 ### Key learnings: 
-JPanel/JFrame usage, arrays, mouse input, constructors, conditions, strings, relationship between classes, UML creation, how to collaborate well.
+JPanel/JFrame usage, Arrays, Matrix, Hashmaps, MouseListener, Constructors, Conditions, Strings, getting images, Fields,  relationship between classes, better UML creation(specifically class level with the different relations between all the classes), and how to collaborate well.
 
 
 
