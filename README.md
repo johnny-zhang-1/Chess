@@ -7,7 +7,7 @@ Revision Date: 5/11/21
 \
 \
 \
-\
+
 #### Program Purpose: 
 The purpose of the program is to display a two player chess game that takes input from a text line. The program appeals to anyone who plays chess, as it provides entertainment and practice for both chess players.
 \
