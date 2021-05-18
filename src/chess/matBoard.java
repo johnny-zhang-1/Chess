@@ -11,13 +11,20 @@ public class matBoard {
 	}
 	
 	public void convert() {
-		Iterator i = mapBoard.entrySet().iterator();
-		while (i.hasNext()) {
-			Map.Entry mapElement = (Map.Entry)i.next();
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				mat[i][j] = new Piece('0', '0');
+			}
+		}
+		Iterator it = mapBoard.entrySet().iterator();
+		while (it.hasNext()) {
+			Map.Entry mapElement = (Map.Entry)it.next();
 			int x, y;
 			String pos = (String) mapElement.getKey();
 			x = (int)(pos.charAt(0) - 'a');
-	    	y = (int)(pos.charAt(1));
+			System.out.println(x);
+	    	y = (int)(pos.charAt(1) - 49);
+	    	System.out.println(y);
 	    	mat[x][y] = (Piece) mapElement.getValue();
 		}
 	}
