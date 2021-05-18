@@ -1,9 +1,10 @@
  # Chess
 chess uwu.
 we live in a society.
+
 ## Team Name: Some Asian Kid
 Team members: Johnny Zhang, Nathan Gu, Albert Yu \
-Revision Date: 5/11/21
+Revision Date: 5/18/21
 
 
 
