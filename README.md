@@ -1,13 +1,15 @@
- # Chess 
-chess uwu. 
+ # Chess
+chess uwu.
 we live in a society.
-## Team Name: Some Asian Kid 
+## Team Name: Some Asian Kid
 Team members: Johnny Zhang, Nathan Gu, Albert Yu \
 Revision Date: 5/11/21
 
 
+
 ### Program Purpose: 
 The purpose of the program is to display a two player chess game that takes input from a text line and selecting pieces from left clicking(You can play the game by yourself if you're lonely or just trying to experience how to defend your own moves and how to counter the counter). The program appeals to anyone who plays chess, as it provides entertainment and practice for both chess players. 
+
 
 
 ### Instructions: 
@@ -17,12 +19,12 @@ Users will be able to input moves on a text line. First, the white player will s
 
 
 ### Target User Profile: 
-Anyone who likes to have fun or practice playing chess with another an opponent or to improve their own skill by themselves.
+Our target user profile contains a range of people from avid chess players to people who wish to practice playing with another 
 
 
 
 ### Feature List: 
-scuffed chess(will add checks, checkmates, and pins if we have extra time), there's a nice looking chess board GUI and pieces. The classes use mouseListener class to allow the users to select the pieces to move. Because we used a HashMap, we don't need to implement a system to remove the piece after it is taken.WE ALSO HAVE CUSTOMIZABLE ASSETS!!! 
+Scuffed chess(will add checks, checkmates, and pins if we have extra time), there's a nice looking chess board GUI and pieces. The classes use mouseListener class to allow the users to select the pieces to move. Because we used a HashMap, we don't need to implement a system to remove the piece after it is taken.WE ALSO HAVE CUSTOMIZABLE ASSETS!!! 
 
 
 
@@ -32,7 +34,7 @@ Download the java files and initialize the package. Also, add the .pngs and .jpg
 
 
 ### Class List: 
-Board, Piece, ChessPanel, MyPanel, PieceImg, Pawn, Rook, Knight, Bishop, King, Queen
+Board, Piece, ChessPanel, MyPanel, PieceImg, Pawn, Rook, Knight, Bishop, King, Queen, MapBoard
 
 
 
