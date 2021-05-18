@@ -9,13 +9,13 @@ Revision Date: 5/18/21
 
 
 ### Program Purpose: 
-The purpose of the program is to display a two player chess game that takes input from a text line and selecting pieces from left clicking(You can play the game by yourself if you're lonely or just trying to experience how to defend your own moves and how to counter the counter). The program appeals to anyone who plays chess, as it provides entertainment and practice for both chess players. 
+The purpose of the program is to display a two player chess game that takes input from a text line and selects pieces from left clicking(You can play the game by yourself if you're lonely or just trying to experience how to defend your own moves and how to counter the counter). The program appeals to anyone who plays chess, as it provides entertainment and practice for both chess players. 
 
 
 
 ### Instructions: 
 The two players will play on the same device.\
-Users will be able to input moves on a text line. First, the white player will select a piece to move and then the piece selected will appear on the top right corner. Upon selecting the piece, an auto generated line of text appears in the text field on the top left corner of the GUI to prompt for a move. Only enter the position you want to move to(eg. c4). For example, typing "e4" will move the piece at it's current position to e4.
+Users will be able to input moves on a text line. First, the white player will select a piece to move and then the piece selected will appear on the top right corner. Upon selecting the piece, an auto generated line of text appears in the text field on the top left corner of the GUI to prompt for a move. Only enter the position you want to move to(eg. c4). For example, typing "e4" will move the piece at its current position to e4.
 
 
 
@@ -25,12 +25,12 @@ Our target user profile contains a range of people from avid chess players to pe
 
 
 ### Feature List: 
-Scuffed chess(will add checks, checkmates, and pins if we have extra time), there's a nice looking chess board GUI and pieces. The classes use mouseListener class to allow the users to select the pieces to move. Because we used a HashMap, we don't need to implement a system to remove the piece after it is taken.WE ALSO HAVE CUSTOMIZABLE ASSETS!!! 
+Scuffed chess(will add checks, checkmates, and pins if we have extra time), there's a nice looking chess board GUI and pieces. The classes use mouseListener class to allow the users to select the pieces to move in a much easier way rather than entering old position and new position in a single text field. Because we used a HashMap, we don't need to implement a system to remove the piece after it is taken. Each of the individual classes with the piece names all contain a method called isLegal that checks whether or not the move is legal in terms of chess. We made the GUI resizable so that we can accompany users who run this program on smaller screens to have the chess board well sized, making it easier for them to play. We also have a class to convert the HashMap to a matrix for each of the individual classes to see where the other peices are in order to determine whether or not a move is legal. WE ALSO HAVE CUSTOMIZABLE ASSETS!!!
 
 
 
 ### Instructions: 
-Download the java files and initialize the package. Also, add the .pngs and .jpg files for the chess pieces and board. Upon completeing these tasks, run the program from the board class and you will see a chess board with the pieces. If you feel the need to adjust the chess board due to a small screen, resize the GUI into a more comfortable area or position; you can also run this on a monitor. Finall,y you can move your pieces accordingly based on how your opponent moves in chess. Click on a piece and then enter just the location where you wish to move the piece. You will see what piece you selected on the top left corner. Enter your moves through the text field(Next step White Queen "e4") and have fun :).
+Download the java files and initialize the package. Also, add the .pngs and .jpg files for the chess pieces and board. Upon completing these tasks, run the program from the board class and you will see a chess board with the pieces. If you feel the need to adjust the chess board due to a small screen, resize the GUI into a more comfortable area or position; you can also run this on a monitor. Finally, you can move your pieces accordingly based on how your opponent moves in chess. Click on a piece and then enter just the location where you wish to move the piece. You will see what piece you selected on the top left corner. Enter your moves through the text field(Next step White Queen "e4") and have fun :).
 
 
 
@@ -45,12 +45,12 @@ Board, Piece, ChessPanel, MyPanel, PieceImg, Pawn, Rook, Knight, Bishop, King, Q
 
 
 ### Team Responsibilities:
-Try and stay ahead of guidelines as much as possible and make sure to complete your class(don't procrastinate please). Ask for help and help others. Make sure to share most recent version of the code on GitHub as well so we can update the UML and readme :). Johnny will do the code's "skeleton," Albert will do graphics, and Nathan will do UML, readme and anything else that needs doing. (In the end, Nathan created a "skeleton" of all the classes but the graphics related, while Johnny writes the methods for the individual pieces(king, knight, pawn, etc..). Albert's role remained the same).
+Try and stay ahead of guidelines as much as possible and make sure to complete your class(don't procrastinate please). Ask for help and help others. Make sure to share the most recent version of the code on GitHub as well so we can update the UML and readme :). Johnny will do the code's "skeleton," Albert will do graphics, and Nathan will do UML, readme and anything else that needs doing. (In the end, Nathan created a "skeleton" of all the classes but the graphics related, while Johnny writes the methods for the individual pieces(king, knight, pawn, etc..). Albert's role remained the same).
 
 
 
 ### Known Bugs/Workarounds:
-Classes compile with each other now. If you select a piece but don't enter a location and press enter, the piece will delete itself. When you launch the program from board and the screen size is too small, the chess board will be too big sometimes and the pieces are out of place. We need to add the isLegal method for each of the classes to check whether or not you can move the piece to a certain position. We are having trouble trying to link up the classes with the isLegal method due to the removal of the Square class.
+Classes compile with each other now. If you select a piece but don't enter a location and press enter, the piece will delete itself. When you launch the program from the board and the screen size is too small, the chess board will be too big sometimes and the pieces are out of place. We need to add the isLegal method for each of the classes to check whether or not you can move the piece to a certain position. We are having trouble trying to link up the classes with the isLegal method due to the removal of the Square class.
 
 
 
@@ -63,3 +63,5 @@ JPanel/JFrame usage, Arrays, Matrix, Hashmaps, MouseListener, Constructors, Cond
 https://codereview.stackexchange.com/questions/71790/  , Albert's father, Nathan's father.
 
   
+
+
