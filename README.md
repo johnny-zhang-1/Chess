@@ -57,6 +57,6 @@ JPanel/JFrame usage, arrays, mouse input, constructors, conditions, strings, rel
 
 
 #### Credit List: 
-https://codereview.stackexchange.com/questions/71790/ design-a-chess-game- using-object-oriented-principles , Albert's father, Nathan's father.
+https://codereview.stackexchange.com/questions/71790/  , Albert's father, Nathan's father.
 
   
