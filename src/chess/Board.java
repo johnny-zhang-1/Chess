@@ -124,8 +124,9 @@ public class Board{
 			 public void actionPerformed(ActionEvent event) {
 				 if(toField.getText() != null){
 					 System.out.println(toField.getText());
+					 char tempt = turn;
 					 if (toField.getText().equals("Castle Short") &&
-						 turn == 'w' &&
+						 tempt == 'w' &&
 						 matB.mat[4][0].getType().charAt(0) == 'k' &&
 						 matB.mat[7][0].getType().charAt(0) == 'r' &&
 						 matB.mat[5][0].getType().charAt(0) == '0' &&
@@ -138,7 +139,7 @@ public class Board{
 						 panel.repaint();
 					 }
 					 if (toField.getText().equals("Castle Short") &&
-						 turn == 'b' &&
+						 tempt == 'b' &&
 						 matB.mat[4][7].getType().charAt(0) == 'k' &&
 						 matB.mat[7][7].getType().charAt(0) == 'r' &&
 						 matB.mat[5][7].getType().charAt(0) == '0' &&
@@ -151,7 +152,7 @@ public class Board{
 						 panel.repaint();
 					 }
 					 if (toField.getText().equals("Castle Long") &&
-						 turn == 'w' &&
+						 tempt == 'w' &&
 						 matB.mat[4][0].getType().charAt(0) == 'k' &&
 						 matB.mat[0][0].getType().charAt(0) == 'r' &&
 						 matB.mat[3][0].getType().charAt(0) == '0' &&
@@ -165,7 +166,7 @@ public class Board{
 						 panel.repaint();
 						 }
 					 if (toField.getText().equals("Castle Long") &&
-						 turn == 'b' &&
+						 tempt == 'b' &&
 						 matB.mat[4][7].getType().charAt(0) == 'k' &&
 						 matB.mat[0][7].getType().charAt(0) == 'r' &&
 						 matB.mat[3][7].getType().charAt(0) == '0' &&
