@@ -50,7 +50,8 @@ Try and stay ahead of guidelines as much as possible and make sure to complete y
 
 
 ### Known Bugs/Workarounds:
-Classes compile with each other now. If you select a piece but don't enter a location and press enter, the piece will delete itself. When you launch the program from the board and the screen size is too small, the chess board will be too big sometimes and the pieces are out of place. We need to add the isLegal method for each of the classes to check whether or not you can move the piece to a certain position. We are having trouble trying to link up the classes with the isLegal method due to the removal of the Square class.
+Classes compile with each other now. If you select a piece but don't enter a location and press enter, the piece will delete itself. When you launch the program from the board and the screen size is too small, the chess board will be too big sometimes and the pieces are out of place. Some QOL would be nice, such as highlighting which piece to move, adding a win screen and telling the user that a move is illegal. Also, en passant. God i hate en passant. It's exactly the kind of bull*** move you would come up with on the spot to improve your position. It's also difficult to implement, so we left it out. 
+
 
 
 
