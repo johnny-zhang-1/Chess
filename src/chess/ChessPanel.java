@@ -36,7 +36,9 @@ public class ChessPanel extends MyPanel implements MouseListener{
 	private PieceIMG whiterook = new PieceIMG("whiterook.png");
 	private PieceIMG whiteknight = new PieceIMG("whiteknight.png");
 	private PieceIMG whiteking = new PieceIMG("whiteking.png");
-//	private PieceIMG boardPiece = new PieceIMG("board.jpg");
+	
+	private PieceIMG boardPiece = new PieceIMG("board.jpg");
+	
 	private PieceIMG wwinScreen = new PieceIMG("whitewin.jpg");
 	private PieceIMG bwinScreen = new PieceIMG("blackwin.jpg");
 	private PieceIMG blackTurn = new PieceIMG("blackturn.jpg");
@@ -91,6 +93,8 @@ public class ChessPanel extends MyPanel implements MouseListener{
 	//	g.drawImage((new ImageIcon("wk.png")).getImage(), 0 , 0, 800,800, this);
 
 		//iterate through the hashmap and display all of the pieces
+		
+		boardPiece.draw(g, 0, 0);
 		for (Map.Entry me : hmap.entrySet()) {
 			Piece bob = (Piece) me.getValue();
 			String Piecename = (bob.getColor()) + "" + (bob.getType());
@@ -98,7 +102,7 @@ public class ChessPanel extends MyPanel implements MouseListener{
 			String chessLoc = (String) me.getKey();
 			System.out.println(Piecename + "  " + chessLoc);
 			int new_x = (int)(chessLoc.charAt(0)-'a')*100;
-			int new_y = (7-(int)(chessLoc.charAt(1)-'1'))*95;
+			int new_y = (7-(int)(chessLoc.charAt(1)-'1'))*100;
 			System.out.println(chessLoc.charAt(1)-'1');
 			if (Piecename.equals("bp")) {
 				System.out.println("painting blackpawn");
@@ -152,9 +156,9 @@ public class ChessPanel extends MyPanel implements MouseListener{
 		}
 		//prints special assets (whiteMoving will display asset that shows which side is moving)
 		if (whiteMoving) {
-			whiteTurn.draw(g, 800, 0);
+			whiteTurn.draw(g, 800, 700);
 		} else {
-			blackTurn.draw(g, 800, 700);
+			blackTurn.draw(g, 800, 0);
 		}
 		//if one side has won then will display win screen
 		if (whiteWin) {
