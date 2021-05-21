@@ -190,12 +190,12 @@ public class Board{
 				}
 			}
 		}
-		//If white wins, it shows the white wins screen
+		//If white wins, it repaints for the white wins screen
 		if (whitewin == true) {
 			panel.whiteWin = true;
 			panel.repaint();
 		}
-		//If black wins, it shows the black wins screen
+		//If black wins, it repaints for the black wins screen
 		if (blackwin == true) {
 			panel.blackWin = true;
 			panel.repaint();
