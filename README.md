@@ -14,8 +14,7 @@ The purpose of the program is to display a two player chess game that takes inpu
 
 
 ### Instructions: 
-The two players will play on the same device.\
-Users will be able to input moves on a text line. First, the white player will select a piece to move and then the piece selected will appear on the top right corner. Upon selecting the piece, an auto generated line of text appears in the text field on the top left corner of the GUI to prompt for a move. Only enter the position you want to move to(eg. c4). For example, typing "e4" will move the piece at its current position to e4.
+Download the java files and initialize the package. Also, add the .pngs and .jpg files for the chess pieces and board. Upon completing these tasks, run the program from the board class and you will see a chess board with the pieces. If you feel the need to adjust the chess board due to a small screen, resize the GUI into a more comfortable area or position; you can also run this on a monitor. Finally, you can move your pieces accordingly based on how your opponent moves in chess. Click on a piece and then enter just the location where you wish to move the piece. You will see what piece you selected on the top left corner. Enter your moves through the text field(Next step White Queen "e4") and have fun :).
 
 
 
@@ -26,11 +25,6 @@ Our target user profile contains a range of people from avid chess players to pe
 
 ### Feature List: 
 Scuffed chess(will add checks, checkmates, and pins if we have extra time), there's a nice looking chess board GUI and pieces. The classes use mouseListener class to allow the users to select the pieces to move in a much easier way rather than entering old position and new position in a single text field. Because we used a HashMap, we don't need to implement a system to remove the piece after it is taken. Each of the individual classes with the piece names all contain a method called isLegal that checks whether or not the move is legal in terms of chess. We made the GUI resizable so that we can accompany users who run this program on smaller screens to have the chess board well sized, making it easier for them to play. We also have a class to convert the HashMap to a matrix for each of the individual classes to see where the other peices are in order to determine whether or not a move is legal. WE ALSO HAVE CUSTOMIZABLE ASSETS!!!
-
-
-
-### Instructions: 
-Download the java files and initialize the package. Also, add the .pngs and .jpg files for the chess pieces and board. Upon completing these tasks, run the program from the board class and you will see a chess board with the pieces. If you feel the need to adjust the chess board due to a small screen, resize the GUI into a more comfortable area or position; you can also run this on a monitor. Finally, you can move your pieces accordingly based on how your opponent moves in chess. Click on a piece and then enter just the location where you wish to move the piece. You will see what piece you selected on the top left corner. Enter your moves through the text field(Next step White Queen "e4") and have fun :).
 
 
 
