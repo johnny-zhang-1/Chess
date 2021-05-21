@@ -17,7 +17,11 @@ public class ChessPanel extends MyPanel implements MouseListener{
 	HashMap<String, Piece> hmap = new HashMap<String, Piece>();
 	Map<String, Piece> whitePieces = new HashMap<String, Piece>();
 	Map<String, Piece> blackPieces = new HashMap<String, Piece>();
-	
+
+	private boolean whiteMoving = true;
+	private boolean whiteWin;
+	private boolean blackWin;
+
 	Board board;
 
 	//images
@@ -120,6 +124,16 @@ public class ChessPanel extends MyPanel implements MouseListener{
 	public void updateHMap(HashMap<String, Piece> h) {
 		hmap = h;
 	}
+
+	public void switchMove() {
+		whiteMoving = !whiteMoving;
+	}
+	public void whiteWon(){
+		whiteWin = true;
+	}
+	public void blackWon() {
+		blackWin = true;
+	}
 	
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
@@ -191,6 +205,20 @@ public class ChessPanel extends MyPanel implements MouseListener{
 					
 			}
 		}
+
+		if (whiteMoving) {
+			whiteTurn.draw(g, 800, 0);
+		} else {
+			blackTurn.draw(g, 800, 700);
+		}
+		
+		if (whiteWin) {
+			wwinScreen.draw(g, 200, 300);
+		}
+		if (blackWin) {
+			bwinScreen.draw(g, 200, 300);
+		}
+
 	}
 
 	@Override
