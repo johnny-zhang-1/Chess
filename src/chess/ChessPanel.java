@@ -83,6 +83,10 @@ public class ChessPanel extends MyPanel implements MouseListener{
 	private PieceIMG whiteknight = new PieceIMG("whiteknight.png");
 	private PieceIMG whiteking = new PieceIMG("whiteking.png");
 //	private PieceIMG boardPiece = new PieceIMG("board.jpg");
+	private PieceIMG wwinScreen = new PieceIMG("whitewin.jpg");
+	private PieceIMG bwinScreen = new PieceIMG("blackwin.jpg");
+	private PieceIMG blackTurn = new PieceIMG("blackturn.jpg");
+	private PieceIMG whiteTurn = new PieceIMG("whiteturn.jpg");
 
 	public ChessPanel(HashMap<String, Piece> h) {
 
