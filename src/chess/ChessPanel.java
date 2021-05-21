@@ -8,68 +8,22 @@ import java.util.*;
 
 import javax.swing.*;
 public class ChessPanel extends MyPanel implements MouseListener{
-//array
-//gInput[] array = new gInput[32]; 
 	
 	int currX;
 	int currY;
-
+	//create hashmap
 	HashMap<String, Piece> hmap = new HashMap<String, Piece>();
+	//old stuff
 	Map<String, Piece> whitePieces = new HashMap<String, Piece>();
 	Map<String, Piece> blackPieces = new HashMap<String, Piece>();
 
-	private boolean whiteMoving = true;
-	private boolean whiteWin;
-	private boolean blackWin;
+	//variables for special assets
+	public boolean whiteMoving = true;
+	public boolean whiteWin;
+	public boolean blackWin;
 
 	Board board;
-
-	//images
-//	private Image blackpawnIMG = (new ImageIcon("blackpawn.png")).getImage();
-//	private Image blackqueenIMG = (new ImageIcon("blackqueen.png")).getImage();
-//	private Image blackbishopIMG = (new ImageIcon("blackbishop.png")).getImage();
-//	private Image blackrookIMG = (new ImageIcon("blackrook.png")).getImage();
-//	private Image blackknightIMG = (new ImageIcon("blackknight.png")).getImage();
-//	private Image blackkingIMG = (new ImageIcon("blackking.png")).getImage();
-//	private Image whitepawnIMG = (new ImageIcon("whitepawn.png")).getImage();
-//	private Image whitequeenIMG = (new ImageIcon("whitequeen.png")).getImage();
-//	private Image whitebishopIMG = (new ImageIcon("whitebishop.png")).getImage();
-//	private Image whiterookIMG = (new ImageIcon("whiterook.png")).getImage();
-//	private Image whiteknightIMG = (new ImageIcon("whiteknight.png")).getImage();
-//	private Image whitekingIMG = (new ImageIcon("whiteking.png")).getImage();
-//	private Image boardIMG = (new ImageIcon("board.jpg")).getImage();
-	
-//	private Image blackpawnIMG = (new ImageIcon("bp.png")).getImage();
-//	private Image blackqueenIMG = (new ImageIcon("bq.png")).getImage();
-//	private Image blackbishopIMG = (new ImageIcon("bb.png")).getImage();
-//	private Image blackrookIMG = (new ImageIcon("br.png")).getImage();
-//	private Image blackknightIMG = (new ImageIcon("bn.png")).getImage();
-//	private Image blackkingIMG = (new ImageIcon("bk.png")).getImage();
-//	private Image whitepawnIMG = (new ImageIcon("wp.png")).getImage();
-//	private Image whitequeenIMG = (new ImageIcon("wq.png")).getImage();
-//	private Image whitebishopIMG = (new ImageIcon("wb.png")).getImage();
-//	private Image whiterookIMG = (new ImageIcon("wr.png")).getImage();
-//	private Image whiteknightIMG = (new ImageIcon("wn.png")).getImage();
-//	private Image whitekingIMG = (new ImageIcon("wk.png")).getImage();
-	//private Image boardIMG = (new ImageIcon("board.jpg")).getImage();
-	
-	//Pieceimgs (idk why i have these, maybe if i want to add something into PieceIMG)
-	
-//	private PieceIMG blackpawn = new PieceIMG(blackpawnIMG);
-//	private PieceIMG blackqueen = new PieceIMG(blackqueenIMG);
-//	private PieceIMG blackbishop = new PieceIMG(blackbishopIMG);
-//	private PieceIMG blackrook = new PieceIMG(blackrookIMG);
-//	private PieceIMG blackknight = new PieceIMG(blackknightIMG);
-//	private PieceIMG blackking = new PieceIMG(blackkingIMG);
-//	private PieceIMG whitepawn = new PieceIMG(whitepawnIMG);
-//	private PieceIMG whitequeen = new PieceIMG(whitequeenIMG);
-//	private PieceIMG whitebishop = new PieceIMG(whitebishopIMG);
-//	private PieceIMG whiterook = new PieceIMG(whiterookIMG);
-//	private PieceIMG whiteknight = new PieceIMG(whiteknightIMG);
-//	private PieceIMG whiteking = new PieceIMG(whitekingIMG);
-//	private PieceIMG boardPiece = new PieceIMG(boardIMG);   
-
-
+	//create all the assets on the board with images
 	private PieceIMG blackpawn = new PieceIMG("blackpawn.png");
 	private PieceIMG blackqueen = new PieceIMG("blackqueen.png");
 	private PieceIMG blackbishop = new PieceIMG("blackbishop.png");
@@ -88,8 +42,9 @@ public class ChessPanel extends MyPanel implements MouseListener{
 	private PieceIMG blackTurn = new PieceIMG("blackturn.jpg");
 	private PieceIMG whiteTurn = new PieceIMG("whiteturn.jpg");
 
+	//constructor
 	public ChessPanel(HashMap<String, Piece> h) {
-
+		//MyPanel
 		super();
 		hmap = h;
 		
@@ -102,43 +57,28 @@ public class ChessPanel extends MyPanel implements MouseListener{
 		
 		this.addMouseListener(this);
 	}
-
+	
 	public ChessPanel(HashMap<String, Piece> h, Board board) {
 		this(h);
 		this.board = board;
 	}
-//	public void move(String PieceType, String location) {
-//		int new_x;
-//		int new_y;
-//		char temp = location.charAt(0);
-//		new_x = ((int)(temp)-'a')*100;
-//		new_y = (int)(location.charAt(1)-'1')*100;
-//		
-//		if (PieceType == "bk1") {
-//			//black knight 1 (meaning left side) 2 means right side
-//		}
-//		//after changed x, y coords of a Piece, clear screen and repaint (???)
-//	}
-//  archived	
-//	public void updateArray(gInput[] array) {
-//		this.array = array;
-//	}
-
-
+	//send the hashmap to the current hashmap for rendering
 	public void updateHMap(HashMap<String, Piece> h) {
 		hmap = h;
 	}
-
+	//method to manually switch move
 	public void switchMove() {
 		whiteMoving = !whiteMoving;
 	}
+	//method to say white won
 	public void whiteWon(){
 		whiteWin = true;
 	}
+	//method to say black won
 	public void blackWon() {
 		blackWin = true;
 	}
-	
+	//paintComponent will redo everything inside on the same window when repaint is run
 	public void paintComponent(Graphics g) {
 		super.paintComponent(g);
 
@@ -149,7 +89,8 @@ public class ChessPanel extends MyPanel implements MouseListener{
 	//	boardPiece.draw(g, 0 , 0);
 		
 	//	g.drawImage((new ImageIcon("wk.png")).getImage(), 0 , 0, 800,800, this);
-		
+
+		//iterate through the hashmap and display all of the pieces
 		for (Map.Entry me : hmap.entrySet()) {
 			Piece bob = (Piece) me.getValue();
 			String Piecename = (bob.getColor()) + "" + (bob.getType());
@@ -209,13 +150,13 @@ public class ChessPanel extends MyPanel implements MouseListener{
 					
 			}
 		}
-
+		//prints special assets (whiteMoving will display asset that shows which side is moving)
 		if (whiteMoving) {
 			whiteTurn.draw(g, 800, 0);
 		} else {
 			blackTurn.draw(g, 800, 700);
 		}
-		
+		//if one side has won then will display win screen
 		if (whiteWin) {
 			wwinScreen.draw(g, 200, 300);
 		}
@@ -224,7 +165,7 @@ public class ChessPanel extends MyPanel implements MouseListener{
 		}
 
 	}
-
+	//mouseclicked will select a piece and send information to board if a move is made
 	@Override
 	public void mouseClicked(MouseEvent e) {
 		// TODO Auto-generated method stub
