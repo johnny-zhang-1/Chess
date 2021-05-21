@@ -15,7 +15,7 @@ import javax.swing.JTextField;
 
 public class Board{
 	
-	//Map<String, Piece> whitePieces = new HashMap<String, Piece>();
+	//Initializes the HashMap
 	HashMap<String, Piece> pieces = new HashMap<String, Piece>();
 
 	public String movedFrom;
@@ -24,17 +24,20 @@ public class Board{
 	String oldLoc;
 	boolean refreshReq = false;
 	
+	//Shows the labels on the top left an right hand corners that helps the user know what piece and move they are doing
 	JLabel fromLabel = new JLabel("You Select:");
 	JLabel toLabel = new JLabel("Next Move");
 	
-	//JTextField fromField = new JTextField("Current");
+	
 	JTextField toField = new JTextField("Next");
 	ChessPanel panel;
 	
 	public matBoard matB = new matBoard(pieces);
 	
 	char turn = 'w';
-
+	
+	
+	//Setup for the board
 	private void setup() {
 		
 		pieces.clear();
@@ -75,6 +78,7 @@ public class Board{
 		pieces.put("h2", new Pawn('p', 'w'));
 	}
 	
+	//Checks for promotion(pawn promotion to another piece)
 	private void checkPromotion() {
 		
 		for (int i = 0; i < 8; i++) {
@@ -106,7 +110,10 @@ public class Board{
 		
 	}
 	
+	//Checks whether or not a castle is valid
 	private void checkCastle(String str, char tempt) {
+		
+	//Checks for a short castle for white
 	if (str.equals("O-O") &&
 			 tempt == 'w' &&
 			 matB.mat[4][0].getType().charAt(0) == 'k' &&
@@ -120,6 +127,8 @@ public class Board{
 			 turn = 'b';
 			 panel.repaint();
 		 }
+		
+		 //Checks for a short castle for black
 		 if (str.equals("O-O") &&
 			 tempt == 'b' &&
 			 matB.mat[4][7].getType().charAt(0) == 'k' &&
@@ -133,6 +142,7 @@ public class Board{
 			 turn = 'w';
 			 panel.repaint();
 		 }
+		 //Checks for a long castle for white
 		 if (str.equals("O-O-O") &&
 			 tempt == 'w' &&
 			 matB.mat[4][0].getType().charAt(0) == 'k' &&
@@ -147,6 +157,7 @@ public class Board{
 			 turn = 'b';
 			 panel.repaint();
 			 }
+		//Checks for a long castle for black
 		 if (str.equals("O-O-O") &&
 			 tempt == 'b' &&
 			 matB.mat[4][7].getType().charAt(0) == 'k' &&
@@ -162,7 +173,7 @@ public class Board{
 			 panel.repaint();
 		 }
 	}
-	
+	//Checks whether or not a checkmate is present
 	private void checkCheckmate() {
 		Iterator it = pieces.entrySet().iterator();
 		boolean whitewin = true;
@@ -179,16 +190,18 @@ public class Board{
 				}
 			}
 		}
+		//If white wins, it shows the white wins screen
 		if (whitewin == true) {
 			panel.whiteWin = true;
 			panel.repaint();
 		}
+		//If black wins, it shows the black wins screen
 		if (blackwin == true) {
 			panel.blackWin = true;
 			panel.repaint();
 		}
 	}
-	
+	//Logic for creating the board and deciding where the board is placed, as well as it's dimensions
 	private void createBoard() {
 		JFrame chessBoard = new JFrame("Chess Board");
 		chessBoard.setBounds(0, 0, 800, 850);
@@ -259,7 +272,7 @@ public class Board{
 		chessBoard.setVisible(true);
 		chessBoard.repaint();
 	}
-	
+	//Converts between different notations and variables
 	public void setFromTextField(String color, String type, String loc) {
 		
 		String value = "";
@@ -300,6 +313,7 @@ public class Board{
 		
 	}*/
 	
+	//Creates the board
 	public static void main(String[] args) throws Exception{
 		Board board = new Board();
 		board.setup();
