@@ -106,6 +106,87 @@ public class Board{
 		
 	}
 	
+	private void checkCastle(String str, char tempt) {
+	if (str.equals("O-O") &&
+			 tempt == 'w' &&
+			 matB.mat[4][0].getType().charAt(0) == 'k' &&
+			 matB.mat[7][0].getType().charAt(0) == 'r' &&
+			 matB.mat[5][0].getType().charAt(0) == '0' &&
+			 matB.mat[6][0].getType().charAt(0) == '0') {
+			 pieces.remove("e1");
+			 pieces.remove("h1");
+			 pieces.put("g1", new Piece('k', 'w'));
+			 pieces.put("f1", new Piece('r', 'w'));
+			 turn = 'b';
+			 panel.repaint();
+		 }
+		 if (str.equals("O-O") &&
+			 tempt == 'b' &&
+			 matB.mat[4][7].getType().charAt(0) == 'k' &&
+			 matB.mat[7][7].getType().charAt(0) == 'r' &&
+			 matB.mat[5][7].getType().charAt(0) == '0' &&
+			 matB.mat[6][7].getType().charAt(0) == '0') {
+			 pieces.remove("e8");
+			 pieces.remove("h8");
+			 pieces.put("g8", new Piece('k', 'b'));
+			 pieces.put("f8", new Piece('r', 'b'));
+			 turn = 'w';
+			 panel.repaint();
+		 }
+		 if (str.equals("O-O-O") &&
+			 tempt == 'w' &&
+			 matB.mat[4][0].getType().charAt(0) == 'k' &&
+			 matB.mat[0][0].getType().charAt(0) == 'r' &&
+			 matB.mat[3][0].getType().charAt(0) == '0' &&
+			 matB.mat[2][0].getType().charAt(0) == '0' &&
+			 matB.mat[1][0].getType().charAt(0) == '0') {
+			 pieces.remove("e1");
+			 pieces.remove("a1");
+			 pieces.put("c1", new Piece('k', 'w'));
+			 pieces.put("d1", new Piece('r', 'w'));
+			 turn = 'b';
+			 panel.repaint();
+			 }
+		 if (str.equals("O-O-O") &&
+			 tempt == 'b' &&
+			 matB.mat[4][7].getType().charAt(0) == 'k' &&
+			 matB.mat[0][7].getType().charAt(0) == 'r' &&
+			 matB.mat[3][7].getType().charAt(0) == '0' &&
+			 matB.mat[2][7].getType().charAt(0) == '0' &&
+			 matB.mat[1][7].getType().charAt(0) == '0') {
+			 pieces.remove("e8");
+			 pieces.remove("a8");
+			 pieces.put("c8", new Piece('k', 'b'));
+			 pieces.put("d8", new Piece('r', 'b'));
+			 turn = 'w';
+			 panel.repaint();
+		 }
+	}
+	
+	private void checkCheckmate() {
+		Iterator it = pieces.entrySet().iterator();
+		boolean whitewin = true;
+		boolean blackwin = true;
+		while (it.hasNext()) {
+			Map.Entry mapElement = (Map.Entry)it.next();
+			Piece temp = (Piece)mapElement.getValue();
+			if (temp.getType().charAt(0) == 'k') {
+				if (temp.getColor().charAt(0) == 'b') {
+					blackwin = false;
+				}
+				if (temp.getColor().charAt(0) == 'w') {
+					whitewin = false;
+				}
+			}
+		}
+		if (whitewin == true) {
+			//albert do some shit here
+		}
+		if (blackwin == true) {
+			//albert do some shit here
+		}
+	}
+	
 	private void createBoard() {
 		JFrame chessBoard = new JFrame("Chess Board");
 		chessBoard.setBounds(0, 0, 800, 850);
@@ -119,89 +200,28 @@ public class Board{
 		//fromField.setMinimumSize(new Dimension(100,30));
 		toField.setMinimumSize(new Dimension(100,30));
 		toField.addActionListener(new ActionListener() {
-			
-			
 			 public void actionPerformed(ActionEvent event) {
 				 if(toField.getText() != null){
 					 System.out.println(toField.getText());
 					 char tempt = turn;
-					 if (toField.getText().equals("Castle Short") &&
-						 tempt == 'w' &&
-						 matB.mat[4][0].getType().charAt(0) == 'k' &&
-						 matB.mat[7][0].getType().charAt(0) == 'r' &&
-						 matB.mat[5][0].getType().charAt(0) == '0' &&
-						 matB.mat[6][0].getType().charAt(0) == '0') {
-						 pieces.remove("e1");
-						 pieces.remove("h1");
-						 pieces.put("g1", new Piece('k', 'w'));
-						 pieces.put("f1", new Piece('r', 'w'));
-						 turn = 'b';
-						 panel.repaint();
-					 }
-					 if (toField.getText().equals("Castle Short") &&
-						 tempt == 'b' &&
-						 matB.mat[4][7].getType().charAt(0) == 'k' &&
-						 matB.mat[7][7].getType().charAt(0) == 'r' &&
-						 matB.mat[5][7].getType().charAt(0) == '0' &&
-						 matB.mat[6][7].getType().charAt(0) == '0') {
-						 pieces.remove("e8");
-						 pieces.remove("h8");
-						 pieces.put("g8", new Piece('k', 'b'));
-						 pieces.put("f8", new Piece('r', 'b'));
-						 turn = 'w';
-						 panel.repaint();
-					 }
-					 if (toField.getText().equals("Castle Long") &&
-						 tempt == 'w' &&
-						 matB.mat[4][0].getType().charAt(0) == 'k' &&
-						 matB.mat[0][0].getType().charAt(0) == 'r' &&
-						 matB.mat[3][0].getType().charAt(0) == '0' &&
-						 matB.mat[2][0].getType().charAt(0) == '0' &&
-						 matB.mat[1][0].getType().charAt(0) == '0') {
-						 pieces.remove("e1");
-						 pieces.remove("a1");
-						 pieces.put("c1", new Piece('k', 'w'));
-						 pieces.put("d1", new Piece('r', 'w'));
-						 turn = 'b';
-						 panel.repaint();
-						 }
-					 if (toField.getText().equals("Castle Long") &&
-						 tempt == 'b' &&
-						 matB.mat[4][7].getType().charAt(0) == 'k' &&
-						 matB.mat[0][7].getType().charAt(0) == 'r' &&
-						 matB.mat[3][7].getType().charAt(0) == '0' &&
-						 matB.mat[2][7].getType().charAt(0) == '0' &&
-						 matB.mat[1][7].getType().charAt(0) == '0') {
-						 pieces.remove("e8");
-						 pieces.remove("a8");
-						 pieces.put("c8", new Piece('k', 'b'));
-						 pieces.put("d8", new Piece('r', 'b'));
-						 turn = 'w';
-						 panel.repaint();
-					 }
-					 
+					 checkCastle(toField.getText(), tempt);
 				     String[] strs = toField.getText().split(" ");
 				     String newLoc = strs[strs.length-1];
 				     if (newLoc.length() == 2) {
-				     
+				    	 checkCheckmate();
 					     System.out.println("New Location : " + newLoc);
 					     matB.updateMatBoard(pieces);
-						 if (pieces.get(oldLoc).isLegal(oldLoc, newLoc, matB.mat, turn) == false) {
-							 //Albert, get your **** together. I have been asking you for 4 days
-							 //to do this. It can't possibly be that hard to put down whatever
-							 //rom com anime you're watching and add a tiny text box telling the 
-							 //user that the move is illegal. Now go ****ing implement this or
-							 //I will be dropping an anonymous tip to the FBI involving your 
-							 //questionable "homework" folder.
-						 }
+					     
 					     if (pieces.get(oldLoc).isLegal(oldLoc, newLoc, matB.mat, turn) == true) {
 					    	 char temp = '0';
+						 
 					    	 if (turn == 'w') {
 					    		 temp = 'b';
 					    	 }
 					    	 if (turn == 'b') {
 					    		 temp = 'w';
 					    	 }
+						     //update whose turn it is
 					    	 turn = temp;
 						     Piece p = pieces.get(oldLoc);
 						     pieces.remove(oldLoc);
