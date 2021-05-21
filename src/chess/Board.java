@@ -186,6 +186,14 @@ public class Board{
 				     
 					     System.out.println("New Location : " + newLoc);
 					     matB.updateMatBoard(pieces);
+						 if (pieces.get(oldLoc).isLegal(oldLoc, newLoc, matB.mat, turn) == false) {
+							 //Albert, get your **** together. I have been asking you for 4 days
+							 //to do this. It can't possibly be that hard to put down whatever
+							 //rom com anime you're watching and add a tiny text box telling the 
+							 //user that the move is illegal. Now go ****ing implement this or
+							 //I will be dropping an anonymous tip to the FBI involving your 
+							 //questionable "homework" folder.
+						 }
 					     if (pieces.get(oldLoc).isLegal(oldLoc, newLoc, matB.mat, turn) == true) {
 					    	 char temp = '0';
 					    	 if (turn == 'w') {
