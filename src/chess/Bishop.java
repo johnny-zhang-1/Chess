@@ -15,27 +15,27 @@ public class Bishop extends Piece {
     }
     @Override
     public boolean isLegal(String a, String b, Piece[][] mat, char turn) {
-
+		//convert to matrix coords
     	int x1, y1, x2, y2;
     	x1 = (int)(a.charAt(0) - 'a');
     	y1 = (int)(a.charAt(1) - 49);
     	x2 = (int)(b.charAt(0) - 'a');
     	y2 = (int)(b.charAt(1) - 49);
-    	
+    	//check if it is this piece's color's turn
     	if (mat[x1][y1].getColor().charAt(0) != turn) {
     		return false;
     	}
-    	
+    	//check if the colors of the start and end locations are different
     	boolean diff = true;
     	if (mat[x1][y1].getColor().charAt(0) == mat[x2][y2].getColor().charAt(0)) {
     		diff = false;
     		return false;
     	}
-    	
+    	//check if moving diagonally
     	if (Math.abs(x2 - x1) != Math.abs(y2 - y1)) {
     		return false;
     	}
-    	
+    	//check if path is blocked
     	if (x1 < x2 && y1 < y2) {
     		for (int i = 0; i < x2 - x1; i++) {
     			if (mat[x1 + i][y1 + i].getType().charAt(0) == 
