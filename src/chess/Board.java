@@ -180,10 +180,12 @@ public class Board{
 			}
 		}
 		if (whitewin == true) {
-			//albert do some shit here
+			panel.whiteWin = true;
+			panel.repaint();
 		}
 		if (blackwin == true) {
-			//albert do some shit here
+			panel.blackWin = true;
+			panel.repaint();
 		}
 	}
 	
