@@ -219,12 +219,15 @@ public class Board{
 						 
 					    	 if (turn == 'w') {
 					    		 temp = 'b';
+							 panel.whiteMoving = false;
 					    	 }
 					    	 if (turn == 'b') {
 					    		 temp = 'w';
+							 panel.whiteMoving = true;
 					    	 }
 						     //update whose turn it is
 					    	 turn = temp;
+						 
 						     Piece p = pieces.get(oldLoc);
 						     pieces.remove(oldLoc);
 						     pieces.put(newLoc, p);
