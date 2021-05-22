@@ -36,7 +36,7 @@ public class ChessPanel extends MyPanel implements MouseListener{
 	private PieceIMG whiterook = new PieceIMG("whiterook.png");
 	private PieceIMG whiteknight = new PieceIMG("whiteknight.png");
 	private PieceIMG whiteking = new PieceIMG("whiteking.png");
-//	private PieceIMG boardPiece = new PieceIMG("board.jpg");
+	private PieceIMG boardPiece = new PieceIMG("board.jpg");
 	private PieceIMG wwinScreen = new PieceIMG("whitewin.jpg");
 	private PieceIMG bwinScreen = new PieceIMG("blackwin.jpg");
 	private PieceIMG blackTurn = new PieceIMG("blackturn.jpg");
@@ -86,7 +86,7 @@ public class ChessPanel extends MyPanel implements MouseListener{
 //
 	//	System.out.println(Integer.toString(boardIMG.getHeight(null)) + "x" + Integer.toString(boardIMG.getWidth(null)));
 		//redraw everything with new coords (get input as )
-	//	boardPiece.draw(g, 0 , 0);
+		boardPiece.draw(g, 0 , 0);
 		
 	//	g.drawImage((new ImageIcon("wk.png")).getImage(), 0 , 0, 800,800, this);
 
