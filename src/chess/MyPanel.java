@@ -28,7 +28,7 @@ public class MyPanel extends JPanel{
     //draws out the chess board
     protected void paintComponent(Graphics g) {
         super.paintComponent(g);
-        g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
+   //     g.drawImage(img, 0, 0, getWidth(), getHeight(), this);
     }
 
 }
