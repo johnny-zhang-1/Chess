@@ -2,14 +2,14 @@
 chess uwu.
 we live in a society.
 
-## Team Name: Some Asian Kid
+## Team Name: Some Asian Kids
 Team members: Johnny Zhang, Nathan Gu, Albert Yu \
 Revision Date: 5/18/21
 
 
 
 ### Program Purpose: 
-The purpose of the program is to display a two player chess game that takes input from a text line and selects pieces from left clicking(You can play the game by yourself if you're lonely or just trying to experience how to defend your own moves and how to counter the counter). The program appeals to anyone who plays chess, as it provides entertainment and practice for both chess players. 
+The purpose of the program is to display a two player chess game that takes input from a text line and selects pieces from left clicking. Our program displays the greatest two player chess game Take turns making moves that will lead you to victory by selecting a piece and entering where you want it to go. This program will appeal to anyone who wants a taste of the most skill based game on the planet Ultimate Chess provides quality entertainment and practice in piece movement for both players. We want to expand to a range of people from avid chess players to beginners who don’t know the real rules of chess.
 
 
 
@@ -24,7 +24,7 @@ Our target user profile contains a range of people from avid chess players to pe
 
 
 ### Feature List: 
-Scuffed chess(will add checks, checkmates, and pins if we have extra time), there's a nice looking chess board GUI and pieces. The classes use mouseListener class to allow the users to select the pieces to move in a much easier way rather than entering old position and new position in a single text field. Because we used a HashMap, we don't need to implement a system to remove the piece after it is taken. Each of the individual classes with the piece names all contain a method called isLegal that checks whether or not the move is legal in terms of chess. We made the GUI resizable so that we can accompany users who run this program on smaller screens to have the chess board well sized, making it easier for them to play. We also have a class to convert the HashMap to a matrix for each of the individual classes to see where the other peices are in order to determine whether or not a move is legal. WE ALSO HAVE CUSTOMIZABLE ASSETS!!!
+Scuffed chess(will add checks, checkmates, and pins if we have extra time), there's a nice looking chess board GUI and pieces. The classes use mouseListener class to allow the users to select the pieces to move in a much easier way rather than entering old position and new position in a single text field. Because we used a HashMap, we don't need to implement a system to remove the piece after it is taken. Each of the individual classes with the piece names all contain a method called isLegal that checks whether or not the move is legal in terms of chess. We made the GUI resizable so that we can accompany users who run this program on smaller screens to have the chess board well sized, making it easier for them to play. We also have a class to convert the HashMap to a matrix for each of the individual classes to see where the other peices are in order to determine whether or not a move is legal. WE ALSO HAVE CUSTOMIZABLE ASSETS(eg. Win screen)!!!
 
 
 
