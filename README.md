@@ -9,7 +9,7 @@ Revision Date: 5/18/21
 
 
 ### Program Purpose: 
-The purpose of the program is to display a two player chess game that takes input from a text line and selects pieces from left clicking. Our program displays the greatest two player chess game Take turns making moves that will lead you to victory by selecting a piece and entering where you want it to go. This program will appeal to anyone who wants a taste of the most skill based game on the planet Ultimate Chess provides quality entertainment and practice in piece movement for both players. We want to expand to a range of people from avid chess players to beginners who don’t know the real rules of chess.
+The purpose of the program is to display a two player chess game that takes input from a text line and selects pieces from left clicking. Our program displays the greatest two player chess game. The players take turns making moves that will lead to ones victory by selecting a piece and entering where you want it to go. 
 
 
 
@@ -19,7 +19,7 @@ Download the java files and initialize the package. Also, add the .pngs and .jpg
 
 
 ### Target User Profile: 
-Our target user profile contains a range of people from avid chess players to people who wish to practice playing with another opponent. We want to expand our target user profile as we further improve the program's usefulness and quality by hooking in people who never play or show any interest in chess.
+Our target user profile contains a range of people from avid chess players to people who wish to practice playing with another opponent. This program will appeal to anyone who wants a taste of the most skill based game on the planet. Ultimate Chess provides quality entertainment and practice in piece movement for both players. We want to expand to a range of people from avid chess players to beginners who don’t know the real rules of chess.
 
 
 
@@ -44,7 +44,7 @@ Try and stay ahead of guidelines as much as possible and make sure to complete y
 
 
 ### Known Bugs/Workarounds:
-Classes compile with each other now. If you select a piece but don't enter a location and press enter, the piece will delete itself. When you launch the program from the board and the screen size is too small, the chess board will be too big sometimes and the pieces are out of place. Some QOL would be nice, such as highlighting which piece to move, adding a win screen and telling the user that a move is illegal. Also, en passant. God i hate en passant. It's exactly the kind of random move you would come up with on the spot to improve your position. It's also difficult to implement, so we left it out. 
+Classes compile with each other now. If you select a piece but don't enter a location and press enter, the piece will delete itself(fixed). When you launch the program from the board and the screen size is too small, the chess board will be too big sometimes and the pieces are out of place(fixed). Some QOL would be nice, such as highlighting which piece to move, adding a win screen and telling the user that a move is illegal(added win screen). Also, en passant. God i hate en passant. It's exactly the kind of random move you would come up with on the spot to improve your position. It's also difficult to implement, so we left it out. 
 
 
 
